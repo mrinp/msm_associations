@@ -17,11 +17,20 @@
       <dt>Description</dt>
       <dd><%= @movie.description %></dd>
 
-      <dt>Image url</dt>
-      <dd><%= @movie.image_url %></dd>
-
       <dt>Director</dt>
-      <dd><%= @movie.director_id %></dd>
+      <dd>
+        <a href = "/directors/<%= @movie.director_id %>">
+          <%= @movie.director.name %>
+        </a>
+      </dd>
+
+      <dt>Image</dt>
+      <dd><img src = "<%= @movie.image_url %>"></dd>
+
+      <dt>Number of Characters</dt>
+      <dd>
+        <%= @movie.characters.count %>
+      </dd>
 
     </dl>
 
@@ -38,3 +47,11 @@
     </div>
   </div>
 </div>
+
+<% @movie.characters.each do |character| %>
+<li>
+<%= @movie.actors.name %>
+(<%= character.name %>)
+</li>
+<% end %>
+</ul>
