@@ -32,3 +32,17 @@
     </div>
   </div>
 </div>
+
+<dt>Number of Characters</dt>
+<dd>
+  <%= @actor.characters.count %>
+</dd>
+
+
+<dt>Movies</dt>
+<% @actor.movies.each do |movie| %>
+<li>
+<%= movie.title %>: <%= movie.characters.name %>
+</li>
+<% end %>
+</ul>

@@ -50,8 +50,7 @@
 
 <% @movie.characters.each do |character| %>
 <li>
-<%= @movie.actors.name %>
-(<%= character.name %>)
+<%= character.actor.name %>: <%= character.name %>
 </li>
 <% end %>
 </ul>
